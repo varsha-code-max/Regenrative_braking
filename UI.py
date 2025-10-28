@@ -1,7 +1,7 @@
 # app.py
 import streamlit as st
 import numpy as np
-import joblib
+import pickle
 import os
 
 st.set_page_config(page_title="EV Regenerative Braking Dashboard", layout="centered")
@@ -9,7 +9,7 @@ st.set_page_config(page_title="EV Regenerative Braking Dashboard", layout="cente
 # --- Load model
 MODEL_PATH = "models/regen_model.pkl"
 if os.path.exists(MODEL_PATH):
-    model = joblib.load(MODEL_PATH)
+    model = pickle.load(MODEL_PATH)
 else:
     st.error("Model not found! Please run train_model.py first.")
     st.stop()
