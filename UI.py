@@ -11,7 +11,7 @@ MODEL_PATH = "models/regen_model.pkl"
 if os.path.exists(MODEL_PATH):
     model = joblib.load(MODEL_PATH)
 else:
-    st.error("Model not found! Please run train_model.py first.")
+    st.error("Model not found! Please run train.py first.")
     st.stop()
 
 st.title("⚡ EV Regenerative Energy Recovery Predictor")
